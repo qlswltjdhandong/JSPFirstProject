@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = "form_ok.jsp" method = "post" >
+    Name : <input type = "text" name = "username"><br>
+    Age : <input type = "text" name = "userage"><br>
+    University : <input type = "text" name = "university"><br>
+
+    <p>Gender</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+
+    <br><label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday">
+    <br>
+    <p>email : </p>
+    <input type="email" id="email" name="email"><br>
+
+    <p>What season were you born?</p>
+    <select id="season" name="season">
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+        <option value="fall">Fall</option>
+        <option value="winter">Winter</option>
+    </select><br>
+
+    <p>What language are you more familiar with?</p>
+    <input type="radio" id="korean" name="fav_language" value="Korean">
+    <label for="korean">Korean</label>
+    <input type="radio" id="english" name="fav_language" value="English">
+    <label for="english">English</label>
+
+    <p>What movie genre do you like?</p>
+    <input type="checkbox" id="action" name="Action" value="Action">
+    <label for="action"> Action Movie</label>
+    <input type="checkbox" id="romance" name="Romance" value="Romance">
+    <label for="romance"> Romance Movie</label>
+    <input type="checkbox" id="horror" name="Horror" value="Horror">
+    <label for="horror">Horror Movie</label><br>
+
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor">
+
+    <p> 좋아하는 가수는?</p>
+    <br><textarea name="message" rows="10" cols="30">  </textarea><br>
+
+    <input type = "submit" value = "Send">
+</form>
+</body>
+</html>
