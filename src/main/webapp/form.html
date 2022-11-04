@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    fieldset{
+        width : 200px;
+    }
+    button{
+        width : 55px;
+        height : 21.5px;
+    }
+</style>
 <body>
-<form action = "form_ok.jsp" method = "post" >
-    Name : <input type = "text" name = "username"><br>
-    Age : <input type = "text" name = "userage"><br>
-    University : <input type = "text" name = "university"><br>
+<form name = "form1" form action = "form_ok.jsp" method = "post" onsubmit = "return validateForm()" >
+    <fieldset>
+        <legend>정보</legend>
+    1. Name : <input type = "text" name = "username"><br>
+    2. Age : <input type = "text" name = "userage"><br>
+    3. University : <input type = "text" name = "university"><br>
 
-    <p>Gender</p>
+    <p>4. Gender</p>
     <input type="radio" id="male" name="gender" value="male">
     <label for="male">Male</label>
     <input type="radio" id="female" name="gender" value="female">
     <label for="female">Female</label>
 
-    <br><label for="birthday">Birthday:</label>
+    <br><label for="birthday">5. Birthday:</label>
     <input type="date" id="birthday" name="birthday">
     <br>
-    <p>email : </p>
+    <p>6. email : </p>
     <input type="email" id="email" name="email"><br>
 
-    <p>What season were you born?</p>
+    <p>7. What season were you born?</p>
     <select id="season" name="season">
         <option value="spring">Spring</option>
         <option value="summer">Summer</option>
@@ -30,13 +41,13 @@
         <option value="winter">Winter</option>
     </select><br>
 
-    <p>What language are you more familiar with?</p>
+    <p>8. What language are you more familiar with?</p>
     <input type="radio" id="korean" name="fav_language" value="Korean">
     <label for="korean">Korean</label>
     <input type="radio" id="english" name="fav_language" value="English">
     <label for="english">English</label>
 
-    <p>What movie genre do you like?</p>
+    <p>9. What movie genre do you like?</p>
     <input type="checkbox" id="action" name="Action" value="Action">
     <label for="action"> Action Movie</label>
     <input type="checkbox" id="romance" name="Romance" value="Romance">
@@ -44,13 +55,76 @@
     <input type="checkbox" id="horror" name="Horror" value="Horror">
     <label for="horror">Horror Movie</label><br>
 
-    <label for="favcolor">Select your favorite color:</label>
+    <label for="favcolor">10. Select your favorite color:</label>
     <input type="color" id="favcolor" name="favcolor">
 
-    <p> 좋아하는 가수는?</p>
+    <p> 11. 좋아하는 가수는?</p>
     <br><textarea name="message" rows="10" cols="30">  </textarea><br>
-
     <input type = "submit" value = "Send">
+    </fieldset>
 </form>
 </body>
+<script>
+    function validateForm(){
+        var username = document.form1.username;
+        if(username.value==""){
+            alert("이름을 입력하세요!!");
+            username.focus();
+            return false;
+        }
+        var userage = document.form1.userage;
+        if(userage.value==""){
+            alert("나이를 입력하세요!!");
+            userage.focus();
+            return false;
+        }
+        var university = document.form1.university;
+        if(university.value==""){
+            alert("다니는 대학을 입력하세요!!");
+            university.focus();
+            return false;
+        }
+        var gender = document.form1.gender;
+        if(gender.value==""){
+            alert("성별을 선택하세요!!");
+            gender.focus();
+            return false;
+        }
+        var birthday = document.form1.birthday;
+        if(birthday.value==""){
+            alert("생일을 선택하세요!!");
+            birthday.focus();
+            return false;
+        }
+        var email = document.form1.email;
+        if(email.value==""){
+            alert("이메일을 입력하세요!!");
+            email.focus();
+            return false;
+        }
+
+        var fav_language = document.form1.fav_language;
+        if(fav_language.value==""){
+            alert("언어를 선택해주세요!!");
+            fav_language.focus();
+            return false;
+        }
+        var Action = document.form1.Action;
+        var Romance = document.form1.Romance;
+        var Horror = document.form1.Horror;
+        if(Action.value==""&& Romance.value == "" && Horror.value == ""){
+            alert("좋아하는 장르를 선택해주세요!!");
+            Action.focus();
+            return false;
+        }
+
+        var message = document.form1.message;
+        if(message.value==""){
+            alert("좋아하는 가수를 입력해주세요!!");
+            message.focus();
+            return false;
+        }
+
+    }
+</script>
 </html>
